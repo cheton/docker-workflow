@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "author": "Cheton Wu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.12.3",
     "hiredis": "^0.2.0",
