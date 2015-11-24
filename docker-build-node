@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pushd node
+
 REGISTRY=localhost:5000
 VERSION=$(jq -r ".version" package.json)
 
@@ -12,3 +14,5 @@ docker tag cheton/node:latest $REGISTRY/cheton/node:$VERSION
 docker tag -f cheton/node:latest $REGISTRY/cheton/node:latest
 
 docker push ${REGISTRY}/cheton/node:${VERSION}
+
+popd
