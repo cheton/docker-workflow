@@ -7,19 +7,19 @@ nginx:
     ports:
         - "80:80"
 node1:
-    image: localhost:5000/cheton/node:0.7.0
+    image: localhost:5000/cheton/node:0.8.0
     links:
         - redis
     ports:
         - "8080"
 node2:
-    image: localhost:5000/cheton/node:0.7.0
+    image: localhost:5000/cheton/node:0.8.0
     links:
         - redis
     ports:
         - "8080"
 node3:
-    image: localhost:5000/cheton/node:0.7.0
+    image: localhost:5000/cheton/node:0.8.0
     links:
         - redis
     ports:
