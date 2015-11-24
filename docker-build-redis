@@ -1,0 +1,10 @@
+#!/bin/sh
+
+REGISTRY=localhost:5000
+
+# This build and tag the image with cheton/redis:latest
+docker build -t cheton/redis:latest .
+
+docker tag -f cheton/redis:latest $REGISTRY/cheton/redis:latest
+
+docker push ${REGISTRY}/cheton/redis:latest

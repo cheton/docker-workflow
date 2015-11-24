@@ -1,0 +1,14 @@
+#!/bin/sh
+
+REGISTRY=localhost:5000
+VERSION=$(jq -r ".version" package.json)
+
+# This build and tag the image with cheton/node:latest
+docker build -t cheton/node:latest .
+ID=$(docker images -q cheton/node:latest)
+
+docker tag cheton/node:latest cheton/node:$VERSION
+docker tag cheton/node:latest $REGISTRY/cheton/node:$VERSION
+docker tag -f cheton/node:latest $REGISTRY/cheton/node:latest
+
+docker push ${REGISTRY}/cheton/node:${VERSION}

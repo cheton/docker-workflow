@@ -1,0 +1,10 @@
+#!/bin/sh
+
+REGISTRY=localhost:5000
+
+# This build and tag the image with cheton/nginx:latest
+docker build -t cheton/nginx:latest .
+
+docker tag -f cheton/nginx:latest $REGISTRY/cheton/nginx:latest
+
+docker push ${REGISTRY}/cheton/nginx:latest
